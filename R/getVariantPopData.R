@@ -16,7 +16,8 @@
 #' @importFrom jsonlite fromJSON
 #' @export
 
-getVariantPopData <- function(varids, genomes) {
+getVariantPopData <- function(varids, genomes,datasets) {
+  print("Using dataset:",datasets)
   stopifnot(validGenomes(genomes))
   gmCon <- GraphqlClient$new(url = apiUrl())
   datasets <- getDatasets(genomes)
